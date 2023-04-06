@@ -1,4 +1,3 @@
-const userDto = require("../../dto/authDto");
 const {
   comparePassword,
   hashedPassword,

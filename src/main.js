@@ -2,7 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const userRoutes = require("./auth/routes/user.routes");
 const app = express();
-
+const logger = require("./log/logger");
 const pool = require("./db/db");
 
 const port = process.env.PORT || 8000;
@@ -17,6 +17,11 @@ app.get("/profile", (req, res) => {
 app.use("/api/users", userRoutes);
 
 // 404 middleware
+app.use((req, res, next) => {
+  res.status(404).json({
+    message: `🔥🔥 404 Not Found 🔥🔥`,
+  });
+});
 
 // error handling middleware
 app.use((err, req, res, next) => {
@@ -26,5 +31,7 @@ app.use((err, req, res, next) => {
 });
 
 app.listen(port, () => {
-  console.log(`Server is running on port 🚀🚀🚀🚀🚀🚀 ${port}`);
+  logger.info(`Server is running on port ${port}`);
 });
+
+
