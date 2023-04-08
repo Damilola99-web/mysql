@@ -17,7 +17,6 @@ log4js.configure({
       appenders: ["file", "console"],
       level: "debug",
     },
-    dev
   },
 });
 

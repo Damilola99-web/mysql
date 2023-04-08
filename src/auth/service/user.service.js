@@ -2,14 +2,14 @@ const pool = require("../../db/db");
 const bcrypt = require("bcrypt");
 
 const userService = {
-    createUser: async (email, password) => {
-        // const [result] = await pool.query(
-        //   "INSERT INTO users (email, password) VALUES (?, ?) ",
-        //   [email, hashedPassword]
-        // );
-        
-        // return result; // 1
-    
+  createUser: async (email, password) => {
+    // const [result] = await pool.query(
+    //   "INSERT INTO users (email, password) VALUES (?, ?) ",
+    //   [email, hashedPassword]
+    // );
+
+    // return result; // 1
+
     const res = await pool.query(
       "INSERT INTO users (email, password) VALUES (?, ?) ",
       [email, password]
@@ -32,10 +32,12 @@ const userService = {
     ]);
     const res1 = res[0];
     const result = res1[0]; // const result = res[0][0];
-    console.log(result);
     return result;
-  }
-
+  },
+  findAllUsers: async () => {
+    const result = await pool.query("SELECT * FROM users");
+    return result[0];
+  },
 };
 
 module.exports = userService;

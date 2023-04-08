@@ -6,7 +6,9 @@ const { configService } = require("../config/config");
 const jwtService = {
   generateToken: (payload) => {
     // payload as parameter
-    const token = jwt.sign(payload, configService.jwtSecret, { expiresIn: configService.jwtExpire });
+    const token = jwt.sign(payload, configService.jwtSecret, {
+      expiresIn: configService.jwtExpire,
+    });
     return token;
   },
   verifyToken: (token) => {
@@ -18,14 +20,13 @@ const jwtService = {
     const token = req.cookies.token;
     return token;
   },
-  setCookie: (res, name, value, options = {}) => {
-    res.cookie(name, value, {
-      httpOnly: true,
-      secure: false,
-      sameSite: "none",
-      ...options,
-    });
-  },
+  setTokenCookie: (res, token) => {
+  res.cookie("token", token, { httpOnly: true });
+}
+
+  
 };
+
+
 
 module.exports = jwtService;

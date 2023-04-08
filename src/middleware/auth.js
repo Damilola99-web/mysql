@@ -1,18 +1,18 @@
 const jwt = require('jsonwebtoken');
+const { configService } = require("../config/config");
 
 const auth = (req, res, next) => {
-    const token = req.header('x-auth-token');
+  const token = req.headers?.authorization?.split(" ")[1];
+  if (!token) return res.status(401).json({ message: "Auth Error" });
 
-    if (!token) {
-        return res.status(401).json({ msg: 'No token, authorization denied' });
-    }
-
-    try {
-        const decoded = jwt.verify(token, process.env.JWT_SECRET);
-
-        req.user = decoded.user;
-        next();
-    } catch (err) {
-        res.status(401).json({ msg: 'Token is not valid' });
-    }
+  try {
+      const decoded = jwt.verify(token, configService.jwtSecret);
+    req.user = decoded;
+    next();
+  } catch (err) {
+    console.error("something wrong with auth middleware");
+    res.status(500).json({ message: "Server Error" });
+  }
 };
+
+module.exports = auth;
