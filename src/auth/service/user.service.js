@@ -38,6 +38,17 @@ const userService = {
     const result = await pool.query("SELECT * FROM users");
     return result[0];
   },
+  updateUser: async (id, email, password) => {
+    const result = await pool.query(
+      "UPDATE users SET email = ?, password = ? WHERE id = ?",
+      [email, password, id]
+    );
+    return result[0];
+  },
+  deleteUser: async (id) => {
+    const result = await pool.query("DELETE FROM users WHERE id = ?", [id]);
+    return result[0];
+  },
 };
 
 module.exports = userService;

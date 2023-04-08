@@ -10,8 +10,10 @@ const {
   findUserById,
   findByEmail,
   findAllUsers,
+  updateUser,
+  deleteUser,
 } = require("../service/user.service");
-
+const logger = require("../../log/logger");
 
 exports.createANewUser = wrap(async (req, res) => {
   let { email, password } = req.body;
@@ -35,8 +37,6 @@ exports.userLogin = wrap(async (req, res) => {
   setTokenCookie(res, token);
   return res.status(200).json({ token });
 });
-
-
 
 // Get user profile route using redis cache
 exports.userProfile = wrap(async (req, res) => {
@@ -78,7 +78,7 @@ exports.getStatistics = wrap(async (req, res) => {
       // If users exists in Redis cache, return users
       const users = JSON.parse(cachedUsers);
       const totalUsers = users.length;
-      return res.status(200).json({users, totalUsers});
+      return res.status(200).json({ users, totalUsers });
     } else {
       console.log("============================");
       console.log("i am in postgresql");
@@ -88,8 +88,25 @@ exports.getStatistics = wrap(async (req, res) => {
       const totalUsers = users.length;
       // Set users in Redis cache
       await redisClient.setex("users", 10, JSON.stringify(users)); // 10 seconds
-      return res.status(200).json({users, totalUsers});
+      return res.status(200).json({ users, totalUsers });
     }
   });
 });
 
+// update user profile route
+exports.updateUserProfile = wrap(async (req, res) => {
+  const { id } = req.user;
+  const { email, password } = req.body;
+  const user = await findByEmail(email);
+  if (user) return res.status(409).json({ message: "User already exists" });
+  const hashedPassword = await hashedPassword(password);
+  const updatedUser = await updateUser(id, email, hashedPassword);
+  return res.status(200).json(updatedUser);
+});
+
+// delete user profile route
+exports.deleteUserProfile = wrap(async (req, res) => {
+  const { id } = req.user;
+  const deletedUser = await deleteUser(id);
+  return res.status(200).json(deletedUser);
+});

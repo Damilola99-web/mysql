@@ -1,4 +1,5 @@
 const redis = require("redis");
+const logger = require("../log/logger");
 
 const redisClient = redis.createClient({
   host: "127.0.0.1",
@@ -6,7 +7,7 @@ const redisClient = redis.createClient({
 });
 
 redisClient.on("connect", () => {
-  console.log("Redis client connected");
+  logger.info("Redis client connected");
 });
 
 redisClient.on("error", (err) => {
