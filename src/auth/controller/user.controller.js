@@ -3,6 +3,7 @@ const {
   hashedPassword,
 } = require("../../helper/comparepassword");
 const { generateToken, setTokenCookie } = require("../../helper/jwt");
+const redisClient = require("../../helper/redisconnection");
 const wrap = require("../../helper/wrapper");
 const {
   createUser,
@@ -10,20 +11,7 @@ const {
   findByEmail,
   findAllUsers,
 } = require("../service/user.service");
-const redis = require("redis");
 
-const redisClient = redis.createClient({
-  host: "127.0.0.1",
-  port: 6379,
-});
-
-redisClient.on("connect", () => {
-  console.log("Redis client connected");
-});
-
-redisClient.on("error", (err) => {
-  console.log("Something went wrong " + err);
-});
 
 exports.createANewUser = wrap(async (req, res) => {
   let { email, password } = req.body;
