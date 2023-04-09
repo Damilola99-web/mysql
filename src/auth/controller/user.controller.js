@@ -14,6 +14,12 @@ const {
   deleteUser,
 } = require("../service/user.service");
 const logger = require("../../log/logger");
+const {
+  createWallet,
+  depositIntoWallet,
+  checkIfWalletBelongsToUser,
+} = require("../../wallet/service/wallet.service");
+const { createTransaction } = require("../../transaction/transaction.service");
 
 exports.createANewUser = wrap(async (req, res) => {
   let { email, password } = req.body;
@@ -24,7 +30,8 @@ exports.createANewUser = wrap(async (req, res) => {
   password = await hashedPassword(password);
   const newUser = await createUser(email, password); // 1
   const createdUser = await findUserById(newUser.insertId);
-  return res.status(201).json(createdUser);
+  await createWallet(createdUser[0].id, createdUser[0].email);
+  return res.status(201).json(createdUser[0]);
 });
 
 exports.userLogin = wrap(async (req, res) => {
@@ -109,4 +116,52 @@ exports.deleteUserProfile = wrap(async (req, res) => {
   const { id } = req.user;
   const deletedUser = await deleteUser(id);
   return res.status(200).json(deletedUser);
+});
+
+// deposit into wallet route
+exports.depositIntoWallet = wrap(async (req, res) => {
+  const { id } = req.user;
+  const { amount } = req.body;
+  let user = await findUserById(id);
+  const wallet = await checkIfWalletBelongsToUser(id, user[0].email);
+  if (!wallet) return res.status(404).json({ message: "Wallet not found" });
+  const amountToNumber = +amount;
+  const deposit = await depositIntoWallet(id, amountToNumber);
+  let newBalance = wallet[0].balance + amountToNumber;
+  await createTransaction(
+    id,
+    wallet[0].id,
+    amountToNumber,
+    newBalance,
+    "deposit"
+  );
+
+  return res.status(200).json({
+    message: `Deposit successful of USD${amount}`,
+    deposit: deposit[0],
+  });
+});
+
+// withdraw from wallet route
+exports.withdrawFromWallet = wrap(async (req, res) => {
+  const { id } = req.user;
+  const { amount } = req.body;
+  let user = await findUserById(id);
+  const wallet = await checkIfWalletBelongsToUser(id, user[0].email);
+  if (!wallet) return res.status(404).json({ message: "Wallet not found" });
+  const amountToNumber = +amount;
+  if (amountToNumber > wallet[0].balance)
+    return res.status(400).json({ message: "Insufficient funds" });
+  const newBalance = wallet[0].balance - amountToNumber;
+  await createTransaction(
+    id,
+    wallet[0].id,
+    amountToNumber,
+    newBalance,
+    "withdraw"
+  );
+  return res.status(200).json({
+    message: `Withdrawal successful of USD${amount}`,
+    newBalance,
+  });
 });
