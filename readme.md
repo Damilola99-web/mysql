@@ -1,3 +1,12 @@
+
+#### Edge case
+- [x] User cannot transfer to himself
+- [x] User cannot transfer to non-existing user
+- [x] User cannot transfer more than his balance (insufficient balance)
+- [x] User cannot transfer negative amount
+- [x] Cash back on all withdrawals
+- [X] Redis cache for user profile AND STATISTICS 
+
 Run redis container
 > docker run -d --name logan redis
 

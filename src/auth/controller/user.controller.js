@@ -12,14 +12,17 @@ const {
   findAllUsers,
   updateUser,
   deleteUser,
+  upgradeAccount,
 } = require("../service/user.service");
 const logger = require("../../log/logger");
 const {
   createWallet,
   depositIntoWallet,
   checkIfWalletBelongsToUser,
+  updateWalletBalance,
 } = require("../../wallet/service/wallet.service");
 const { createTransaction } = require("../../transaction/transaction.service");
+const { withdrawFromWallet } = require("../../wallet/service/wallet.service");
 
 exports.createANewUser = wrap(async (req, res) => {
   let { email, password } = req.body;
@@ -31,7 +34,7 @@ exports.createANewUser = wrap(async (req, res) => {
   const newUser = await createUser(email, password); // 1
   const createdUser = await findUserById(newUser.insertId);
   await createWallet(createdUser[0].id, createdUser[0].email);
-  return res.status(201).json(createdUser[0]);
+  return res.status(201).json({ message: "User created successfully" });
 });
 
 exports.userLogin = wrap(async (req, res) => {
@@ -42,7 +45,7 @@ exports.userLogin = wrap(async (req, res) => {
   if (!isMatch) return res.status(401).json({ message: "Invalid credentials" });
   const token = await generateToken({ id: user.id, email: user.email });
   setTokenCookie(res, token);
-  return res.status(200).json({ token });
+  return res.status(200).json({ id: user.id, user: user.email, token: token });
 });
 
 // Get user profile route using redis cache
@@ -127,13 +130,14 @@ exports.depositIntoWallet = wrap(async (req, res) => {
   if (!wallet) return res.status(404).json({ message: "Wallet not found" });
   const amountToNumber = +amount;
   const deposit = await depositIntoWallet(id, amountToNumber);
-  let newBalance = wallet[0].balance + amountToNumber;
+  let newBalance = +wallet[0].balance + amountToNumber;
   await createTransaction(
     id,
     wallet[0].id,
     amountToNumber,
     newBalance,
-    "deposit"
+    "deposit",
+    0
   );
 
   return res.status(200).json({
@@ -152,16 +156,103 @@ exports.withdrawFromWallet = wrap(async (req, res) => {
   const amountToNumber = +amount;
   if (amountToNumber > wallet[0].balance)
     return res.status(400).json({ message: "Insufficient funds" });
-  const newBalance = wallet[0].balance - amountToNumber;
+  let newBalance = wallet[0].balance - amountToNumber;
+  // cashback of 0.1% of the amount withdrawn
+  const cashback = (amountToNumber * 5) / 100; // 0.1% of the amount withdrawn
+  await withdrawFromWallet(id, amountToNumber);
+  newBalance = newBalance + cashback;
   await createTransaction(
     id,
     wallet[0].id,
     amountToNumber,
     newBalance,
-    "withdraw"
+    "withdrawal",
+    +cashback
   );
+  await updateWalletBalance(newBalance, id, wallet[0].id);
+
   return res.status(200).json({
-    message: `Withdrawal successful of USD${amount}`,
+    message: `Withdrawal successful of USD${amount} with cashback of USD${cashback}`,
     newBalance,
   });
 });
+
+// transfer money to another user route
+exports.transferMoney = wrap(async (req, res) => {
+  const { id } = req.user;
+  const { email, amount } = req.body;
+
+  // check if user is trying to transfer money to himself
+  if (email === req.user.email)
+    return res.status(400).json({ message: "You cannot transfer to yourself" });
+  
+// check if user wants to transfer -ve amount
+  if (amount < 0)
+    return res.status(400).json({ message: "You cannot transfer -ve amount" });
+  
+// DONT ALLOW ABOVE 1000 USD BY NON -PREMIUM USERS
+  if (amount > 1000 && req.user.is_premium === false)
+    return res.status(400).json({
+      message: "You cannot transfer more than 1000 USD without being a premium user",
+    });
+
+  let user = await findUserById(id);
+  const wallet = await checkIfWalletBelongsToUser(id, user[0].email);
+  if (!wallet) return res.status(404).json({ message: "Wallet not found" });
+  const amountToNumber = +amount;
+  if (amountToNumber > wallet[0].balance)
+    return res.status(400).json({ message: "Insufficient funds" });
+  const receiver = await findByEmail(email);
+  if (!receiver) return res.status(404).json({ message: "Receiver not found" });
+  const receiverWallet = await checkIfWalletBelongsToUser(
+    receiver.id,
+    receiver.email
+  );
+  if (!receiverWallet)
+    return res.status(404).json({ message: "Receiver wallet not found" });
+  let senderNewBalance = wallet[0].balance - amountToNumber;
+  await withdrawFromWallet(id, amountToNumber);
+  let receiverNewBalance = +receiverWallet[0].balance + amountToNumber;
+  console.log(typeof receiverNewBalance);
+  await depositIntoWallet(receiver.id, amountToNumber);
+  await createTransaction(
+    id,
+    wallet[0].id,
+    amountToNumber,
+    senderNewBalance,
+    "transfer",
+    0
+  );
+  await createTransaction(
+    receiver.id,
+    receiverWallet[0].id,
+    amountToNumber,
+    receiverNewBalance,
+    "deposit",
+    0
+  );
+  await updateWalletBalance(senderNewBalance, id, wallet[0].id);
+  await updateWalletBalance(
+    receiverNewBalance,
+    receiver.id,
+    receiverWallet[0].id
+  );
+
+  return res.status(200).json({
+    message: `Transfer successful of USD${amount} to ${receiver.email}`,
+    walletOwner: user[0].email,
+  });
+});
+
+// upgrade account to premium route
+exports.upgradeAccount = wrap(async (req, res) => {
+  const { id } = req.user;
+  const user = await findUserById(id);
+  if (!user) return res.status(404).json({ message: "User not found" });
+  if (user[0].is_premium) {
+    return res.status(409).json({ message: "Account already upgraded" });
+  }
+  const updatedUser = await upgradeAccount(id);
+  return res.status(200).json(updatedUser);
+});
+

@@ -1,10 +1,17 @@
 const pool = require("../db/db");
 
 const transactionService = {
-  createTransaction: async (userId, wallet_id, amount, balance, type) => {
+  createTransaction: async (
+    userId,
+    wallet_id,
+    amount,
+    balance,
+    type,
+    cashback
+  ) => {
     const result = await pool.query(
-      "INSERT INTO transaction (user_id, wallet_id, amount, balance, type) VALUES (?, ?, ?, ?, ?)",
-      [userId, wallet_id, amount, balance, type]
+      "INSERT INTO transaction (user_id, wallet_id, amount, balance, type, cashback) VALUES (?, ?, ?, ?, ?, ?)",
+      [userId, wallet_id, amount, balance, type, cashback]
     );
     return result[0];
   },
@@ -22,6 +29,7 @@ const transactionService = {
     );
     return result[0];
   },
+ 
 };
 
 module.exports = transactionService;

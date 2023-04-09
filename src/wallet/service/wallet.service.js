@@ -36,6 +36,13 @@ const walletService = {
     );
     return result[0];
   },
+  updateWalletBalance: async (newBalance, userId, wallet_id) => {
+    const result = await pool.query(
+      "UPDATE wallet SET balance = ? WHERE user_id = ? AND id = ?",
+      [newBalance, userId, wallet_id]
+    );
+    return result[0];
+  },
 };
 
 module.exports = walletService;

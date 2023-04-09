@@ -49,6 +49,13 @@ const userService = {
     const result = await pool.query("DELETE FROM users WHERE id = ?", [id]);
     return result[0];
   },
+  upgradeAccount: async (id) => {
+    const result = await pool.query(
+      "UPDATE users SET is_premium = 1 WHERE id = ?",
+      [id]
+    );
+    return result[0];
+  },
 };
 
 module.exports = userService;
