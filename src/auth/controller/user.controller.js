@@ -43,7 +43,11 @@ exports.userLogin = wrap(async (req, res) => {
   if (!user) return res.status(404).json({ message: "User not found" });
   const isMatch = await comparePassword(password, user.password);
   if (!isMatch) return res.status(401).json({ message: "Invalid credentials" });
-  const token = await generateToken({ id: user.id, email: user.email });
+  const token = await generateToken({
+    id: user.id,
+    email: user.email,
+    is_premium: user.is_premium,
+  });
   setTokenCookie(res, token);
   return res.status(200).json({ id: user.id, user: user.email, token: token });
 });
@@ -185,15 +189,16 @@ exports.transferMoney = wrap(async (req, res) => {
   // check if user is trying to transfer money to himself
   if (email === req.user.email)
     return res.status(400).json({ message: "You cannot transfer to yourself" });
-  
-// check if user wants to transfer -ve amount
+
+  // check if user wants to transfer -ve amount
   if (amount < 0)
     return res.status(400).json({ message: "You cannot transfer -ve amount" });
-  
-// DONT ALLOW ABOVE 1000 USD BY NON -PREMIUM USERS
-  if (amount > 1000 && req.user.is_premium === false)
+  // DONT ALLOW ABOVE 1000 USD BY NON -PREMIUM USERS
+  let is_premium = req.user.isPremium;
+  if (amount >= 999 && !is_premium)
     return res.status(400).json({
-      message: "You cannot transfer more than 1000 USD without being a premium user",
+      message:
+        "You cannot transfer more than 1000 USD without being a premium user",
     });
 
   let user = await findUserById(id);
@@ -213,7 +218,6 @@ exports.transferMoney = wrap(async (req, res) => {
   let senderNewBalance = wallet[0].balance - amountToNumber;
   await withdrawFromWallet(id, amountToNumber);
   let receiverNewBalance = +receiverWallet[0].balance + amountToNumber;
-  console.log(typeof receiverNewBalance);
   await depositIntoWallet(receiver.id, amountToNumber);
   await createTransaction(
     id,
