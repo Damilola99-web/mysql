@@ -5,7 +5,9 @@
 - [x] User cannot transfer more than his balance (insufficient balance)
 - [x] User cannot transfer negative amount
 - [x] Cash back on all withdrawals
-- [X] Redis cache for user profile AND STATISTICS 
+- [X] Redis cache for user profile AND STATISTICS
+- [x] You cannot transfer more than 1000 USD without being a premium user
+ 
 
 Run redis container
 > docker run -d --name logan redis
@@ -13,7 +15,7 @@ Run redis container
 run redis container with port mapping
 > docker run -d --name logan -p 6379:6379 redis
 
-Access redis container
+Access redis container  
 > docker exec -it logan bash
 > docker exec -it logan redis-cli
 

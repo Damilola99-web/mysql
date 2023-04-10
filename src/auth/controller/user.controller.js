@@ -194,7 +194,7 @@ exports.transferMoney = wrap(async (req, res) => {
   if (amount < 0)
     return res.status(400).json({ message: "You cannot transfer -ve amount" });
   // DONT ALLOW ABOVE 1000 USD BY NON -PREMIUM USERS
-  let is_premium = req.user.isPremium;
+  let is_premium = req.user.is_premium;
   if (amount >= 999 && !is_premium)
     return res.status(400).json({
       message:
