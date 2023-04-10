@@ -14,17 +14,33 @@ const {
   transactionHistory,
 } = require("../controller/user.controller");
 const auth = require("../../middleware/auth");
+const { validateRequest, schemas } = require("../../utils/validate");
 
-router.post("/signup", createANewUser);
-router.post("/login", userLogin);
+router.post("/signup", validateRequest(schemas.authSchema), createANewUser);
+router.post("/login", validateRequest(schemas.authSchema), userLogin);
 router.get("/profile", auth, userProfile);
 router.get("/statistics", auth, getStatistics);
-router.post("/deposit", auth, depositIntoWallet);
-router.post("/withdraw", auth, withdrawFromWallet);
+router.post(
+  "/deposit",
+  validateRequest(schemas.depositWithdrawalDraftSchema),
+  auth,
+  depositIntoWallet
+);
+router.post(
+  "/withdraw",
+  auth,
+  validateRequest(schemas.depositWithdrawalDraftSchema),
+  withdrawFromWallet
+);
 router.get("/stats", auth, getStatistics);
 router.post("/transfer", auth, transferMoney);
 router.put("/upgrade", auth, upgradeAccount);
-router.post("/overdraft", auth, overdraft);
+router.post(
+  "/overdraft",
+  auth,
+  validateRequest(schemas.depositWithdrawalDraftSchema),
+  overdraft
+);
 router.get("/history", auth, transactionHistory);
 
 

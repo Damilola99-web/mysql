@@ -1,3 +1,6 @@
+#### Start application
+> npm start
+
 
 #### Edge case
 - [x] User cannot transfer to himself
@@ -9,6 +12,7 @@
 - [x] You cannot transfer more than 1000 USD without being a premium user
 - [x] Overdraft limit for premium users
 - [x] Transaction history with pagination 
+- [x] Added joi validation
 
 <!-- localhost:8000/api/users/history?page=2&limit=2 -->
 <!-- localhost:8000/api/users/history -->
