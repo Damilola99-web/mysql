@@ -2261,3 +2261,408 @@
 [2023-04-10T07:54:26.142] [INFO] default - Redis client connected
 [2023-04-10T07:54:26.180] [INFO] default - Database connected successfully 🚀🚀
 [2023-04-10T08:20:34.474] [INFO] default - Redis client connected
+[2023-04-10T14:53:40.269] [INFO] default - Server is running on port 8000
+[2023-04-10T14:53:40.281] [INFO] default - Redis client connected
+[2023-04-10T14:53:40.607] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T14:58:46.389] [INFO] default - Server is running on port 8000
+[2023-04-10T14:58:46.402] [INFO] default - Redis client connected
+[2023-04-10T14:58:46.466] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T14:58:48.237] [INFO] default - Server is running on port 8000
+[2023-04-10T14:58:48.245] [INFO] default - Redis client connected
+[2023-04-10T14:58:48.277] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T14:59:10.214] [INFO] default - Server is running on port 8000
+[2023-04-10T14:59:10.220] [INFO] default - Redis client connected
+[2023-04-10T14:59:10.250] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T14:59:11.239] [INFO] default - Server is running on port 8000
+[2023-04-10T14:59:11.247] [INFO] default - Redis client connected
+[2023-04-10T14:59:11.281] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T14:59:27.050] [INFO] default - Server is running on port 8000
+[2023-04-10T14:59:27.057] [INFO] default - Redis client connected
+[2023-04-10T14:59:27.082] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T14:59:39.015] [INFO] default - Server is running on port 8000
+[2023-04-10T14:59:39.022] [INFO] default - Redis client connected
+[2023-04-10T14:59:39.053] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:01:13.715] [INFO] default - Server is running on port 8000
+[2023-04-10T15:01:13.720] [INFO] default - Redis client connected
+[2023-04-10T15:01:13.747] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:01:16.626] [INFO] default - Server is running on port 8000
+[2023-04-10T15:01:16.631] [INFO] default - Redis client connected
+[2023-04-10T15:01:16.657] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:02:09.083] [INFO] default - Server is running on port 8000
+[2023-04-10T15:02:09.089] [INFO] default - Redis client connected
+[2023-04-10T15:02:09.114] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:02:12.266] [INFO] default - Server is running on port 8000
+[2023-04-10T15:02:12.273] [INFO] default - Redis client connected
+[2023-04-10T15:02:12.298] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:02:15.930] [INFO] default - Server is running on port 8000
+[2023-04-10T15:02:15.943] [INFO] default - Redis client connected
+[2023-04-10T15:02:15.997] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:02:26.874] [INFO] default - Server is running on port 8000
+[2023-04-10T15:02:26.880] [INFO] default - Redis client connected
+[2023-04-10T15:02:26.906] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:02:44.598] [INFO] default - Server is running on port 8000
+[2023-04-10T15:02:44.604] [INFO] default - Redis client connected
+[2023-04-10T15:02:44.632] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:02:48.453] [INFO] default - Server is running on port 8000
+[2023-04-10T15:02:48.459] [INFO] default - Redis client connected
+[2023-04-10T15:02:48.492] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:03:00.186] [INFO] default - Server is running on port 8000
+[2023-04-10T15:03:00.192] [INFO] default - Redis client connected
+[2023-04-10T15:03:00.220] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:03:01.485] [INFO] default - Server is running on port 8000
+[2023-04-10T15:03:01.490] [INFO] default - Redis client connected
+[2023-04-10T15:03:01.517] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:03:04.837] [INFO] default - Server is running on port 8000
+[2023-04-10T15:03:04.843] [INFO] default - Redis client connected
+[2023-04-10T15:03:04.871] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:03:48.415] [INFO] default - Server is running on port 8000
+[2023-04-10T15:03:48.423] [INFO] default - Redis client connected
+[2023-04-10T15:03:48.455] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:04:41.151] [INFO] default - Server is running on port 8000
+[2023-04-10T15:04:41.162] [INFO] default - Redis client connected
+[2023-04-10T15:04:41.213] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:04:42.187] [INFO] default - Server is running on port 8000
+[2023-04-10T15:04:42.193] [INFO] default - Redis client connected
+[2023-04-10T15:04:42.217] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:04:53.262] [INFO] default - Server is running on port 8000
+[2023-04-10T15:04:53.269] [INFO] default - Redis client connected
+[2023-04-10T15:04:53.296] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:05:04.747] [INFO] default - Server is running on port 8000
+[2023-04-10T15:05:04.753] [INFO] default - Redis client connected
+[2023-04-10T15:05:04.785] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:05:07.815] [INFO] default - Server is running on port 8000
+[2023-04-10T15:05:07.824] [INFO] default - Redis client connected
+[2023-04-10T15:05:07.859] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:05:12.208] [INFO] default - Server is running on port 8000
+[2023-04-10T15:05:12.219] [INFO] default - Redis client connected
+[2023-04-10T15:05:12.263] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:05:17.385] [INFO] default - Server is running on port 8000
+[2023-04-10T15:05:17.391] [INFO] default - Redis client connected
+[2023-04-10T15:05:17.430] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:06:02.935] [INFO] default - Server is running on port 8000
+[2023-04-10T15:06:02.941] [INFO] default - Redis client connected
+[2023-04-10T15:06:02.967] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:06:09.543] [INFO] default - Server is running on port 8000
+[2023-04-10T15:06:09.550] [INFO] default - Redis client connected
+[2023-04-10T15:06:09.579] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:06:12.217] [INFO] default - Server is running on port 8000
+[2023-04-10T15:06:12.223] [INFO] default - Redis client connected
+[2023-04-10T15:06:12.247] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:06:14.778] [INFO] default - Server is running on port 8000
+[2023-04-10T15:06:14.784] [INFO] default - Redis client connected
+[2023-04-10T15:06:14.815] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:06:18.117] [INFO] default - Server is running on port 8000
+[2023-04-10T15:06:18.123] [INFO] default - Redis client connected
+[2023-04-10T15:06:18.148] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:10:31.191] [INFO] default - Server is running on port 8000
+[2023-04-10T15:10:31.197] [INFO] default - Redis client connected
+[2023-04-10T15:10:31.226] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:10:33.334] [INFO] default - Server is running on port 8000
+[2023-04-10T15:10:33.340] [INFO] default - Redis client connected
+[2023-04-10T15:10:33.367] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:10:40.662] [INFO] default - Server is running on port 8000
+[2023-04-10T15:10:40.668] [INFO] default - Redis client connected
+[2023-04-10T15:10:40.692] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:10:52.728] [INFO] default - Server is running on port 8000
+[2023-04-10T15:10:52.733] [INFO] default - Redis client connected
+[2023-04-10T15:10:52.759] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:10:58.289] [INFO] default - Server is running on port 8000
+[2023-04-10T15:10:58.294] [INFO] default - Redis client connected
+[2023-04-10T15:10:58.324] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:11:03.470] [INFO] default - Server is running on port 8000
+[2023-04-10T15:11:03.479] [INFO] default - Redis client connected
+[2023-04-10T15:11:03.519] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:11:06.626] [INFO] default - Server is running on port 8000
+[2023-04-10T15:11:06.633] [INFO] default - Redis client connected
+[2023-04-10T15:11:06.674] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:11:09.742] [INFO] default - Server is running on port 8000
+[2023-04-10T15:11:09.753] [INFO] default - Redis client connected
+[2023-04-10T15:11:09.801] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:11:51.114] [INFO] default - Server is running on port 8000
+[2023-04-10T15:11:51.120] [INFO] default - Redis client connected
+[2023-04-10T15:11:51.152] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:11:55.244] [INFO] default - Server is running on port 8000
+[2023-04-10T15:11:55.281] [INFO] default - Redis client connected
+[2023-04-10T15:11:55.343] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:11:56.456] [INFO] default - Server is running on port 8000
+[2023-04-10T15:11:56.461] [INFO] default - Redis client connected
+[2023-04-10T15:11:56.488] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:11:59.438] [INFO] default - Server is running on port 8000
+[2023-04-10T15:11:59.443] [INFO] default - Redis client connected
+[2023-04-10T15:11:59.474] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:12:03.068] [INFO] default - Server is running on port 8000
+[2023-04-10T15:12:03.077] [INFO] default - Redis client connected
+[2023-04-10T15:12:03.127] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:12:15.196] [INFO] default - Server is running on port 8000
+[2023-04-10T15:12:15.206] [INFO] default - Redis client connected
+[2023-04-10T15:12:15.242] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:12:17.572] [INFO] default - Server is running on port 8000
+[2023-04-10T15:12:17.579] [INFO] default - Redis client connected
+[2023-04-10T15:12:17.606] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:12:19.670] [INFO] default - Server is running on port 8000
+[2023-04-10T15:12:19.676] [INFO] default - Redis client connected
+[2023-04-10T15:12:19.731] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:12:26.091] [INFO] default - Server is running on port 8000
+[2023-04-10T15:12:26.098] [INFO] default - Redis client connected
+[2023-04-10T15:12:26.132] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:14:03.539] [INFO] default - Server is running on port 8000
+[2023-04-10T15:14:03.547] [INFO] default - Redis client connected
+[2023-04-10T15:14:03.583] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:16:06.048] [INFO] default - Server is running on port 8000
+[2023-04-10T15:16:06.106] [INFO] default - Redis client connected
+[2023-04-10T15:16:06.251] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:16:21.136] [INFO] default - Server is running on port 8000
+[2023-04-10T15:16:21.176] [INFO] default - Redis client connected
+[2023-04-10T15:16:21.238] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:16:37.191] [INFO] default - Server is running on port 8000
+[2023-04-10T15:16:37.198] [INFO] default - Redis client connected
+[2023-04-10T15:16:37.238] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:16:39.488] [INFO] default - Server is running on port 8000
+[2023-04-10T15:16:39.496] [INFO] default - Redis client connected
+[2023-04-10T15:16:39.534] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:16:43.034] [INFO] default - Server is running on port 8000
+[2023-04-10T15:16:43.044] [INFO] default - Redis client connected
+[2023-04-10T15:16:43.093] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:16:55.128] [INFO] default - Server is running on port 8000
+[2023-04-10T15:16:55.135] [INFO] default - Redis client connected
+[2023-04-10T15:16:55.175] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:16:59.418] [INFO] default - Server is running on port 8000
+[2023-04-10T15:16:59.424] [INFO] default - Redis client connected
+[2023-04-10T15:16:59.453] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:17:01.498] [INFO] default - Server is running on port 8000
+[2023-04-10T15:17:01.504] [INFO] default - Redis client connected
+[2023-04-10T15:17:01.533] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:17:02.764] [INFO] default - Server is running on port 8000
+[2023-04-10T15:17:02.772] [INFO] default - Redis client connected
+[2023-04-10T15:17:02.849] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:17:06.635] [INFO] default - Server is running on port 8000
+[2023-04-10T15:17:06.644] [INFO] default - Redis client connected
+[2023-04-10T15:17:06.678] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:20:32.289] [INFO] default - Server is running on port 8000
+[2023-04-10T15:20:32.300] [INFO] default - Redis client connected
+[2023-04-10T15:20:32.342] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:20:37.018] [INFO] default - Server is running on port 8000
+[2023-04-10T15:20:37.026] [INFO] default - Redis client connected
+[2023-04-10T15:20:37.064] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:20:49.984] [INFO] default - Server is running on port 8000
+[2023-04-10T15:20:49.994] [INFO] default - Redis client connected
+[2023-04-10T15:20:50.060] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:21:04.196] [INFO] default - Server is running on port 8000
+[2023-04-10T15:21:04.204] [INFO] default - Redis client connected
+[2023-04-10T15:21:04.246] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:21:13.151] [INFO] default - Server is running on port 8000
+[2023-04-10T15:21:13.158] [INFO] default - Redis client connected
+[2023-04-10T15:21:13.197] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:21:24.999] [INFO] default - Server is running on port 8000
+[2023-04-10T15:21:25.008] [INFO] default - Redis client connected
+[2023-04-10T15:21:25.043] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:21:26.268] [INFO] default - Server is running on port 8000
+[2023-04-10T15:21:26.276] [INFO] default - Redis client connected
+[2023-04-10T15:21:26.320] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:21:30.913] [INFO] default - Server is running on port 8000
+[2023-04-10T15:21:30.921] [INFO] default - Redis client connected
+[2023-04-10T15:21:30.955] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:21:34.340] [INFO] default - Server is running on port 8000
+[2023-04-10T15:21:34.349] [INFO] default - Redis client connected
+[2023-04-10T15:21:34.387] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:21:37.728] [INFO] default - Server is running on port 8000
+[2023-04-10T15:21:37.736] [INFO] default - Redis client connected
+[2023-04-10T15:21:37.773] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:21:41.413] [INFO] default - Server is running on port 8000
+[2023-04-10T15:21:41.428] [INFO] default - Redis client connected
+[2023-04-10T15:21:41.490] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:21:43.553] [INFO] default - Server is running on port 8000
+[2023-04-10T15:21:43.563] [INFO] default - Redis client connected
+[2023-04-10T15:21:43.620] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:21:47.163] [INFO] default - Server is running on port 8000
+[2023-04-10T15:21:47.171] [INFO] default - Redis client connected
+[2023-04-10T15:21:47.217] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:21:49.036] [INFO] default - Server is running on port 8000
+[2023-04-10T15:21:49.043] [INFO] default - Redis client connected
+[2023-04-10T15:21:49.074] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:22:17.183] [INFO] default - Server is running on port 8000
+[2023-04-10T15:22:17.194] [INFO] default - Redis client connected
+[2023-04-10T15:22:17.246] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:22:20.369] [INFO] default - Server is running on port 8000
+[2023-04-10T15:22:20.377] [INFO] default - Redis client connected
+[2023-04-10T15:22:20.420] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:22:27.463] [INFO] default - Server is running on port 8000
+[2023-04-10T15:22:27.470] [INFO] default - Redis client connected
+[2023-04-10T15:22:27.499] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:22:38.889] [INFO] default - Server is running on port 8000
+[2023-04-10T15:22:38.896] [INFO] default - Redis client connected
+[2023-04-10T15:22:38.930] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:22:42.731] [INFO] default - Server is running on port 8000
+[2023-04-10T15:22:42.741] [INFO] default - Redis client connected
+[2023-04-10T15:22:42.780] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:22:46.171] [INFO] default - Server is running on port 8000
+[2023-04-10T15:22:46.184] [INFO] default - Redis client connected
+[2023-04-10T15:22:46.237] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:22:47.385] [INFO] default - Server is running on port 8000
+[2023-04-10T15:22:47.393] [INFO] default - Redis client connected
+[2023-04-10T15:22:47.433] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:22:48.779] [INFO] default - Server is running on port 8000
+[2023-04-10T15:22:48.787] [INFO] default - Redis client connected
+[2023-04-10T15:22:48.832] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:22:50.394] [INFO] default - Server is running on port 8000
+[2023-04-10T15:22:50.404] [INFO] default - Redis client connected
+[2023-04-10T15:22:50.458] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:22:51.545] [INFO] default - Server is running on port 8000
+[2023-04-10T15:22:51.556] [INFO] default - Redis client connected
+[2023-04-10T15:22:51.600] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:23:17.996] [INFO] default - Server is running on port 8000
+[2023-04-10T15:23:18.005] [INFO] default - Redis client connected
+[2023-04-10T15:23:18.050] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:23:39.132] [INFO] default - Server is running on port 8000
+[2023-04-10T15:23:39.142] [INFO] default - Redis client connected
+[2023-04-10T15:23:39.182] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:23:46.286] [INFO] default - Server is running on port 8000
+[2023-04-10T15:23:46.292] [INFO] default - Redis client connected
+[2023-04-10T15:23:46.320] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:23:53.869] [INFO] default - Server is running on port 8000
+[2023-04-10T15:23:53.882] [INFO] default - Redis client connected
+[2023-04-10T15:23:53.943] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:24:13.602] [INFO] default - Server is running on port 8000
+[2023-04-10T15:24:13.609] [INFO] default - Redis client connected
+[2023-04-10T15:24:13.652] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:24:20.285] [INFO] default - Server is running on port 8000
+[2023-04-10T15:24:20.298] [INFO] default - Redis client connected
+[2023-04-10T15:24:20.354] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:24:31.530] [INFO] default - Server is running on port 8000
+[2023-04-10T15:24:31.539] [INFO] default - Redis client connected
+[2023-04-10T15:24:31.583] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:25:57.690] [INFO] default - Server is running on port 8000
+[2023-04-10T15:25:57.697] [INFO] default - Redis client connected
+[2023-04-10T15:25:57.727] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:25:59.167] [INFO] default - Server is running on port 8000
+[2023-04-10T15:25:59.176] [INFO] default - Redis client connected
+[2023-04-10T15:25:59.216] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:26:00.652] [INFO] default - Server is running on port 8000
+[2023-04-10T15:26:00.658] [INFO] default - Redis client connected
+[2023-04-10T15:26:00.687] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:26:03.633] [INFO] default - Server is running on port 8000
+[2023-04-10T15:26:03.639] [INFO] default - Redis client connected
+[2023-04-10T15:26:03.671] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:26:04.958] [INFO] default - Server is running on port 8000
+[2023-04-10T15:26:04.964] [INFO] default - Redis client connected
+[2023-04-10T15:26:04.999] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:26:09.001] [INFO] default - Server is running on port 8000
+[2023-04-10T15:26:09.010] [INFO] default - Redis client connected
+[2023-04-10T15:26:09.048] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:26:35.721] [INFO] default - Server is running on port 8000
+[2023-04-10T15:26:35.729] [INFO] default - Redis client connected
+[2023-04-10T15:26:35.772] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:26:38.997] [INFO] default - Server is running on port 8000
+[2023-04-10T15:26:39.003] [INFO] default - Redis client connected
+[2023-04-10T15:26:39.029] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:26:41.736] [INFO] default - Server is running on port 8000
+[2023-04-10T15:26:41.742] [INFO] default - Redis client connected
+[2023-04-10T15:26:41.771] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:26:45.010] [INFO] default - Server is running on port 8000
+[2023-04-10T15:26:45.018] [INFO] default - Redis client connected
+[2023-04-10T15:26:45.059] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:26:48.009] [INFO] default - Server is running on port 8000
+[2023-04-10T15:26:48.018] [INFO] default - Redis client connected
+[2023-04-10T15:26:48.065] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:26:57.518] [INFO] default - Server is running on port 8000
+[2023-04-10T15:26:57.526] [INFO] default - Redis client connected
+[2023-04-10T15:26:57.563] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:27:12.442] [INFO] default - Server is running on port 8000
+[2023-04-10T15:27:12.450] [INFO] default - Redis client connected
+[2023-04-10T15:27:12.491] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:27:21.638] [INFO] default - Server is running on port 8000
+[2023-04-10T15:27:21.650] [INFO] default - Redis client connected
+[2023-04-10T15:27:21.758] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:27:59.193] [INFO] default - Server is running on port 8000
+[2023-04-10T15:27:59.199] [INFO] default - Redis client connected
+[2023-04-10T15:27:59.225] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:28:00.951] [INFO] default - Server is running on port 8000
+[2023-04-10T15:28:00.959] [INFO] default - Redis client connected
+[2023-04-10T15:28:00.994] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:28:14.546] [INFO] default - Server is running on port 8000
+[2023-04-10T15:28:14.555] [INFO] default - Redis client connected
+[2023-04-10T15:28:14.602] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:28:20.453] [INFO] default - Server is running on port 8000
+[2023-04-10T15:28:20.461] [INFO] default - Redis client connected
+[2023-04-10T15:28:20.525] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:28:21.961] [INFO] default - Server is running on port 8000
+[2023-04-10T15:28:21.969] [INFO] default - Redis client connected
+[2023-04-10T15:28:22.015] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:28:41.247] [INFO] default - Server is running on port 8000
+[2023-04-10T15:28:41.255] [INFO] default - Redis client connected
+[2023-04-10T15:28:41.289] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:28:47.591] [INFO] default - Server is running on port 8000
+[2023-04-10T15:28:47.598] [INFO] default - Redis client connected
+[2023-04-10T15:28:47.635] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:28:52.811] [INFO] default - Server is running on port 8000
+[2023-04-10T15:28:52.822] [INFO] default - Redis client connected
+[2023-04-10T15:28:52.870] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:29:18.732] [INFO] default - Server is running on port 8000
+[2023-04-10T15:29:18.742] [INFO] default - Redis client connected
+[2023-04-10T15:29:18.784] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:34:01.432] [INFO] default - Server is running on port 8000
+[2023-04-10T15:34:01.451] [INFO] default - Redis client connected
+[2023-04-10T15:34:01.508] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:34:04.782] [INFO] default - Server is running on port 8000
+[2023-04-10T15:34:04.791] [INFO] default - Redis client connected
+[2023-04-10T15:34:04.834] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:34:06.346] [INFO] default - Server is running on port 8000
+[2023-04-10T15:34:06.354] [INFO] default - Redis client connected
+[2023-04-10T15:34:06.393] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:34:16.861] [INFO] default - Server is running on port 8000
+[2023-04-10T15:34:16.869] [INFO] default - Redis client connected
+[2023-04-10T15:34:16.911] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:34:20.924] [INFO] default - Server is running on port 8000
+[2023-04-10T15:34:20.939] [INFO] default - Redis client connected
+[2023-04-10T15:34:20.980] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:34:22.648] [INFO] default - Server is running on port 8000
+[2023-04-10T15:34:22.659] [INFO] default - Redis client connected
+[2023-04-10T15:34:22.732] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:34:24.233] [INFO] default - Server is running on port 8000
+[2023-04-10T15:34:24.242] [INFO] default - Redis client connected
+[2023-04-10T15:34:24.284] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:34:26.949] [INFO] default - Server is running on port 8000
+[2023-04-10T15:34:26.956] [INFO] default - Redis client connected
+[2023-04-10T15:34:26.996] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:34:42.084] [INFO] default - Server is running on port 8000
+[2023-04-10T15:34:42.093] [INFO] default - Redis client connected
+[2023-04-10T15:34:42.129] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:34:45.686] [INFO] default - Server is running on port 8000
+[2023-04-10T15:34:45.694] [INFO] default - Redis client connected
+[2023-04-10T15:34:45.734] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:34:57.589] [INFO] default - Server is running on port 8000
+[2023-04-10T15:34:57.595] [INFO] default - Redis client connected
+[2023-04-10T15:34:57.625] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:35:04.016] [INFO] default - Server is running on port 8000
+[2023-04-10T15:35:04.025] [INFO] default - Redis client connected
+[2023-04-10T15:35:04.068] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:36:35.020] [INFO] default - Server is running on port 8000
+[2023-04-10T15:36:35.029] [INFO] default - Redis client connected
+[2023-04-10T15:36:35.121] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:37:31.745] [INFO] default - Server is running on port 8000
+[2023-04-10T15:37:31.755] [INFO] default - Redis client connected
+[2023-04-10T15:37:31.789] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:38:21.700] [INFO] default - Server is running on port 8000
+[2023-04-10T15:38:21.708] [INFO] default - Redis client connected
+[2023-04-10T15:38:21.754] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:39:52.119] [INFO] default - Server is running on port 8000
+[2023-04-10T15:39:52.127] [INFO] default - Redis client connected
+[2023-04-10T15:39:52.164] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:40:39.466] [INFO] default - Server is running on port 8000
+[2023-04-10T15:40:39.476] [INFO] default - Redis client connected
+[2023-04-10T15:40:39.516] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:40:52.651] [INFO] default - Server is running on port 8000
+[2023-04-10T15:40:52.660] [INFO] default - Redis client connected
+[2023-04-10T15:40:52.697] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:41:01.858] [INFO] default - Server is running on port 8000
+[2023-04-10T15:41:01.867] [INFO] default - Redis client connected
+[2023-04-10T15:41:01.940] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:41:04.356] [INFO] default - Server is running on port 8000
+[2023-04-10T15:41:04.363] [INFO] default - Redis client connected
+[2023-04-10T15:41:04.411] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:41:18.809] [INFO] default - Server is running on port 8000
+[2023-04-10T15:41:18.820] [INFO] default - Redis client connected
+[2023-04-10T15:41:18.868] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-10T15:41:22.828] [INFO] default - Server is running on port 8000
+[2023-04-10T15:41:22.837] [INFO] default - Redis client connected
+[2023-04-10T15:41:22.921] [INFO] default - Database connected successfully 🚀🚀

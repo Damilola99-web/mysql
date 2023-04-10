@@ -21,7 +21,11 @@ const {
   checkIfWalletBelongsToUser,
   updateWalletBalance,
 } = require("../../wallet/service/wallet.service");
-const { createTransaction } = require("../../transaction/transaction.service");
+const {
+  createTransaction,
+  getTransactionHistoryWithPaginationAndLimit,
+  getTransactionHistoryByWalletId,
+} = require("../../transaction/transaction.service");
 const { withdrawFromWallet } = require("../../wallet/service/wallet.service");
 
 exports.createANewUser = wrap(async (req, res) => {
@@ -260,3 +264,106 @@ exports.upgradeAccount = wrap(async (req, res) => {
   return res.status(200).json(updatedUser);
 });
 
+// overdraft route
+exports.overdraft = wrap(async (req, res) => {
+  const { id } = req.user;
+  const { amount } = req.body;
+  let user = await findUserById(id);
+  // overdraft enabled only for premium users only
+  if (!user[0].is_premium)
+    return res.status(400).json({ message: "You are not a premium user" });
+
+  const wallet = await checkIfWalletBelongsToUser(id, user[0].email);
+  if (!wallet) return res.status(404).json({ message: "Wallet not found" });
+  const amountToNumber = +amount;
+  // only borrow overdraft with range
+  if (wallet[0].balance >= 100)
+    return res.status(400).json({
+      message:
+        "You cannot overdraft because you have more than 100 USD in your wallet",
+    });
+  let newBalance = wallet[0].balance - amountToNumber;
+  await withdrawFromWallet(id, amountToNumber);
+  await createTransaction(
+    id,
+    wallet[0].id,
+    amountToNumber,
+    newBalance,
+    "overdraft",
+    0
+  );
+  await updateWalletBalance(newBalance, id, wallet[0].id);
+
+  return res.status(200).json({
+    message: `Overdraft successful of USD${amount}`,
+    newBalance,
+  });
+});
+
+// transaction history route
+exports.transactionHistory = wrap(async (req, res) => {
+  const { id } = req.user;
+  const { page, limit } = req.query;
+  // check if user has a wallet
+  const wallet = await checkIfWalletBelongsToUser(id, req.user.email);
+  if (!wallet) return res.status(404).json({ message: "Wallet not found" });
+
+  if (page && limit) {
+    const transactions = await getTransactionHistoryWithPaginationAndLimit(
+      wallet[0].id,
+      JSON.parse(page),
+      JSON.parse(limit)
+    );
+    const totalTransactions = transactions.length;
+
+    // total numbers of deposits, withdrawals and transfers
+    const totalDeposits = transactions.filter(
+      (transaction) => transaction.type === "deposit"
+    ).length;
+    const totalWithdrawals = transactions.filter(
+      (transaction) => transaction.type === "withdrawal"
+    ).length;
+    const totalTransfers = transactions.filter(
+      (transaction) => transaction.type === "transfer"
+    ).length;
+    const totalOverdrafts = transactions.filter(
+      (transaction) => transaction.type === "overdraft"
+    ).length;
+
+    return res.status(200).json({
+      message: "Transaction history",
+      totalDeposits,
+      totalWithdrawals,
+      totalTransfers,
+      totalOverdrafts,
+      transactionCounts: totalTransactions,
+      transactions,
+    });
+  } else {
+    const transactions = await getTransactionHistoryByWalletId(wallet[0].id);
+    const totalTransactions = transactions.length;
+    // total numbers of deposits, withdrawals and transfers
+    const totalDeposits = transactions.filter(
+      (transaction) => transaction.type === "deposit"
+    ).length;
+    const totalWithdrawals = transactions.filter(
+      (transaction) => transaction.type === "withdrawal"
+    ).length;
+    const totalTransfers = transactions.filter(
+      (transaction) => transaction.type === "transfer"
+    ).length;
+    const totalOverdrafts = transactions.filter(
+      (transaction) => transaction.type === "overdraft"
+    ).length;
+
+    return res.status(200).json({
+      message: "Transaction history",
+      totalDeposits,
+      totalWithdrawals,
+      totalTransfers,
+      totalOverdrafts,
+      transactionCounts: totalTransactions,
+      transactions,
+    });
+  }
+});

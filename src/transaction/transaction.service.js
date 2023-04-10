@@ -15,13 +15,18 @@ const transactionService = {
     );
     return result[0];
   },
-  getTransactionHistory: async (userId) => {
+  getTransactionHistoryWithPaginationAndLimit: async (
+    wallet_id,
+    page,
+    limit
+  ) => {
     const result = await pool.query(
-      "SELECT * FROM transaction WHERE user_id = ?",
-      [userId]
+      "SELECT * FROM transaction WHERE wallet_id = ? LIMIT ? OFFSET ?",
+      [wallet_id, limit, page * limit]
     );
     return result[0];
   },
+
   getTransactionHistoryByWalletId: async (wallet_id) => {
     const result = await pool.query(
       "SELECT * FROM transaction WHERE wallet_id = ?",
@@ -29,7 +34,6 @@ const transactionService = {
     );
     return result[0];
   },
- 
 };
 
 module.exports = transactionService;

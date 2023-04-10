@@ -10,6 +10,8 @@ const {
   withdrawFromWallet,
   transferMoney,
   upgradeAccount,
+  overdraft,
+  transactionHistory,
 } = require("../controller/user.controller");
 const auth = require("../../middleware/auth");
 
@@ -22,5 +24,8 @@ router.post("/withdraw", auth, withdrawFromWallet);
 router.get("/stats", auth, getStatistics);
 router.post("/transfer", auth, transferMoney);
 router.put("/upgrade", auth, upgradeAccount);
+router.post("/overdraft", auth, overdraft);
+router.get("/history", auth, transactionHistory);
+
 
 module.exports = router;
