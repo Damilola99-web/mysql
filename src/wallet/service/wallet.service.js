@@ -43,6 +43,13 @@ const walletService = {
     );
     return result[0];
   },
+  checkIfccountIsFrozen: async (userId) => {
+    const result = await pool.query(
+      "SELECT is_active FROM users WHERE id = ?",
+      [userId]
+    );
+    return result[0];
+  },
 };
 
 module.exports = walletService;

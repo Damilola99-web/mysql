@@ -1,3 +1,71 @@
-[2023-04-10T17:50:56.027] [INFO] default - Server is running on port 8000
-[2023-04-10T17:50:56.035] [INFO] default - Redis client connected
-[2023-04-10T17:50:56.084] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-11T10:19:37.681] [INFO] default - Server is running on port 8000
+[2023-04-11T10:19:37.686] [INFO] default - Redis client connected
+[2023-04-11T10:19:37.710] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-11T10:19:39.750] [INFO] default - GET /
+[2023-04-11T10:20:41.674] [INFO] default - POST /api/users/signup
+[2023-04-11T10:21:03.225] [INFO] default - POST /api/users/signup
+[2023-04-11T10:21:06.381] [INFO] default - POST /api/users/signup
+[2023-04-11T10:21:08.247] [INFO] default - POST /api/users/signup
+[2023-04-11T10:21:26.472] [INFO] default - POST /api/users/signup
+[2023-04-11T10:22:08.205] [INFO] default - POST /api/users/signup
+[2023-04-11T10:22:38.182] [INFO] default - Server is running on port 8000
+[2023-04-11T10:22:38.187] [INFO] default - Redis client connected
+[2023-04-11T10:22:38.211] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-11T10:22:43.074] [INFO] default - POST /api/users/signup
+[2023-04-11T10:22:44.937] [INFO] default - POST /api/users/signup
+[2023-04-11T10:22:46.456] [INFO] default - POST /api/users/signup
+[2023-04-11T10:27:06.564] [INFO] default - POST /api/users/login
+[2023-04-11T10:27:50.229] [INFO] default - POST /api/users/login
+[2023-04-11T10:28:06.704] [INFO] default - POST /api/users/deposit
+[2023-04-11T10:30:25.722] [INFO] default - POST /api/users/withdraw
+[2023-04-11T10:32:07.188] [INFO] default - POST /api/users/transfer
+[2023-04-11T10:32:52.787] [INFO] default - POST /api/users/transfer
+[2023-04-11T10:33:08.567] [INFO] default - POST /api/users/transfer
+[2023-04-11T10:34:32.515] [INFO] default - PUT /api/users/upgrade
+[2023-04-11T10:35:02.231] [INFO] default - POST /api/users/transfer
+[2023-04-11T10:35:21.180] [INFO] default - POST /api/users/login
+[2023-04-11T10:35:40.959] [INFO] default - POST /api/users/login
+[2023-04-11T10:35:49.602] [INFO] default - POST /api/users/transfer
+[2023-04-11T10:36:10.282] [INFO] default - POST /api/users/transfer
+[2023-04-11T10:37:00.763] [INFO] default - POST /api/users/transfer
+[2023-04-11T10:39:39.746] [INFO] default - GET /api/users/profile
+[2023-04-11T10:39:49.050] [INFO] default - GET /api/users/profile
+[2023-04-11T10:39:55.238] [INFO] default - GET /api/users/profile
+[2023-04-11T10:39:57.560] [INFO] default - GET /api/users/profile
+[2023-04-11T10:39:58.924] [INFO] default - GET /api/users/profile
+[2023-04-11T10:40:38.168] [INFO] default - GET /api/users/stats
+[2023-04-11T10:40:41.668] [INFO] default - GET /api/users/stats
+[2023-04-11T10:40:42.903] [INFO] default - GET /api/users/stats
+[2023-04-11T10:40:45.438] [INFO] default - GET /api/users/stats
+[2023-04-11T10:40:46.809] [INFO] default - GET /api/users/stats
+[2023-04-11T10:40:48.008] [INFO] default - GET /api/users/stats
+[2023-04-11T10:41:26.880] [INFO] default - POST /api/users/overdraft
+[2023-04-11T10:43:35.932] [INFO] default - Server is running on port 8000
+[2023-04-11T10:43:35.937] [INFO] default - Redis client connected
+[2023-04-11T10:43:35.968] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-11T10:43:38.700] [INFO] default - Server is running on port 8000
+[2023-04-11T10:43:38.705] [INFO] default - Redis client connected
+[2023-04-11T10:43:38.731] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-11T10:48:37.170] [INFO] default - POST /api/users/transfer
+[2023-04-11T11:11:43.751] [INFO] default - Server is running on port 8000
+[2023-04-11T11:11:43.757] [INFO] default - Redis client connected
+[2023-04-11T11:11:43.898] [INFO] default - Database connected successfully 🚀🚀
+[2023-04-11T11:12:46.309] [INFO] default - POST /api/users/login
+[2023-04-11T11:13:25.608] [INFO] default - POST /api/users/overdraft
+[2023-04-11T11:14:27.046] [INFO] default - GET /api/users/history?page=1&limit=1
+[2023-04-11T11:14:40.948] [INFO] default - GET /api/users/history?page=1&limit=1
+[2023-04-11T11:14:46.938] [INFO] default - GET /api/users/history
+[2023-04-11T11:15:09.714] [INFO] default - GET /api/users/history?page=1&limit=2
+[2023-04-11T11:15:20.200] [INFO] default - GET /api/users/history?page=1&limit=4
+[2023-04-11T11:15:40.404] [INFO] default - GET /api/users/history?page=1&limit=4
+[2023-04-11T11:15:46.693] [INFO] default - GET /api/users/history?page=2&limit=4
+[2023-04-11T11:15:49.242] [INFO] default - GET /api/users/history?page=1&limit=4
+[2023-04-11T11:15:57.929] [INFO] default - POST /api/users/login
+[2023-04-11T11:16:17.211] [INFO] default - POST /api/users/login
+[2023-04-11T11:16:33.278] [INFO] default - PUT /api/users/freeze/2
+[2023-04-11T11:17:05.022] [INFO] default - POST /api/users/login
+[2023-04-11T11:17:12.862] [INFO] default - POST /api/users/deposit
+[2023-04-11T11:17:20.160] [INFO] default - PUT /api/users/unfreeze/2
+[2023-04-11T11:17:28.807] [INFO] default - PUT /api/users/unfreeze/2
+[2023-04-11T11:17:33.609] [INFO] default - POST /api/users/deposit
+[2023-04-11T11:17:51.608] [INFO] default - POST /api/users/deposit

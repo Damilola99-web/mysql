@@ -56,6 +56,21 @@ const userService = {
     );
     return result[0];
   },
+  freezeAccount: async (id) => {
+    const result = await pool.query(
+      "UPDATE users SET is_active = 0 WHERE id = ?",
+      [id]
+    );
+    return result[0];
+  },
+
+  unfreezeAccount: async (id) => {
+    const result = await pool.query(
+      "UPDATE users SET is_active = 1 WHERE id = ?",
+      [id]
+    );
+    return result[0];
+  },
 };
 
 module.exports = userService;

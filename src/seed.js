@@ -15,11 +15,18 @@ const pool = mysql.createConnection({
   queueLimit: 0,
 });
 
+// Delete all tables if they exist
+const dropUsersTable = `DROP TABLE IF EXISTS users;`;
+const dropWalletTable = `DROP TABLE IF EXISTS wallet;`;
+const dropTransactionTable = `DROP TABLE IF EXISTS transaction;`;
+
 const createUsersTable = `
 CREATE TABLE IF NOT EXISTS users (
   id INT NOT NULL AUTO_INCREMENT,
   email VARCHAR(255) NOT NULL UNIQUE,
+  is_active BOOLEAN DEFAULT TRUE,
   password VARCHAR(255) NOT NULL,
+  roles VARCHAR(255) NOT NULL DEFAULT 'user' COMMENT 'user, admin',
   is_premium BOOLEAN NOT NULL DEFAULT FALSE,
   created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
@@ -61,6 +68,28 @@ CREATE TABLE IF NOT EXISTS wallet (
 //use promise with pool
 
 pool.promise();
+
+// drop tables
+pool.query(dropTransactionTable, (err, result) => {
+  if (err) {
+    console.log(err);
+  }
+  console.log("transaction table dropped");
+});
+
+pool.query(dropWalletTable, (err, result) => {
+  if (err) {
+    console.log(err);
+  }
+  console.log("wallet table dropped");
+});
+
+pool.query(dropUsersTable, (err, result) => {
+  if (err) {
+    console.log(err);
+  }
+  console.log("users table dropped");
+});
 
 pool.query(createUsersTable, (err, result) => {
   if (err) {

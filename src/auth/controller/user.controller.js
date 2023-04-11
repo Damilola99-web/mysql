@@ -13,6 +13,8 @@ const {
   updateUser,
   deleteUser,
   upgradeAccount,
+  unfreezeAccount,
+  freezeAccount,
 } = require("../service/user.service");
 const logger = require("../../log/logger");
 const {
@@ -20,6 +22,7 @@ const {
   depositIntoWallet,
   checkIfWalletBelongsToUser,
   updateWalletBalance,
+  checkIfccountIsFrozen,
 } = require("../../wallet/service/wallet.service");
 const {
   createTransaction,
@@ -51,6 +54,8 @@ exports.userLogin = wrap(async (req, res) => {
     id: user.id,
     email: user.email,
     is_premium: user.is_premium,
+    is_active: user.is_active,
+    roles: user.roles,
   });
   setTokenCookie(res, token);
   return res.status(200).json({ id: user.id, user: user.email, token: token });
@@ -136,6 +141,11 @@ exports.depositIntoWallet = wrap(async (req, res) => {
   let user = await findUserById(id);
   const wallet = await checkIfWalletBelongsToUser(id, user[0].email);
   if (!wallet) return res.status(404).json({ message: "Wallet not found" });
+  //check is account is active
+  if (!user[0].is_active)
+    return res
+      .status(403)
+      .json({ message: "Account is frozen. Please contact support " });
   const amountToNumber = +amount;
   const deposit = await depositIntoWallet(id, amountToNumber);
   let newBalance = +wallet[0].balance + amountToNumber;
@@ -161,6 +171,11 @@ exports.withdrawFromWallet = wrap(async (req, res) => {
   let user = await findUserById(id);
   const wallet = await checkIfWalletBelongsToUser(id, user[0].email);
   if (!wallet) return res.status(404).json({ message: "Wallet not found" });
+  //check is account is active
+  if (!user[0].is_active)
+    return res
+      .status(403)
+      .json({ message: "Account is frozen. Please contact support " });
   const amountToNumber = +amount;
   if (amountToNumber > wallet[0].balance)
     return res.status(400).json({ message: "Insufficient funds" });
@@ -208,6 +223,11 @@ exports.transferMoney = wrap(async (req, res) => {
   let user = await findUserById(id);
   const wallet = await checkIfWalletBelongsToUser(id, user[0].email);
   if (!wallet) return res.status(404).json({ message: "Wallet not found" });
+  //check is account is active
+  if (!user[0].is_active)
+    return res
+      .status(403)
+      .json({ message: "Account is frozen. Please contact support " });
   const amountToNumber = +amount;
   if (amountToNumber > wallet[0].balance)
     return res.status(400).json({ message: "Insufficient funds" });
@@ -275,7 +295,7 @@ exports.overdraft = wrap(async (req, res) => {
 
   const wallet = await checkIfWalletBelongsToUser(id, user[0].email);
   if (!wallet) return res.status(404).json({ message: "Wallet not found" });
-  const amountToNumber = +amount;
+  const amountToNumber = +amount; // unary operator to convert string to number
   // only borrow overdraft with range
   if (wallet[0].balance >= 100)
     return res.status(400).json({
@@ -366,4 +386,44 @@ exports.transactionHistory = wrap(async (req, res) => {
       transactions,
     });
   }
+});
+
+// freeze a suspicious account by admin
+exports.freezeUserAccount = wrap(async (req, res) => {
+  const userId = parseInt(req.params.id);
+  if (isNaN(userId))
+    return res.status(400).json({ message: "Invalid user id" });
+  const user = await findUserById(userId);
+  if (!user) return res.status(404).json({ message: "User not found" });
+  if (!user[0].is_active) {
+    return res.status(409).json({ message: "Account already frozen 🥶🥶🥶🧊" });
+  }
+  const updatedUser = await freezeAccount(userId);
+  return res.status(200).json({ message: "Account frozen successfully" });
+});
+
+// unfreeze a frozen account by admin
+exports.unfreezeUserAccount = wrap(async (req, res) => {
+  const userId = parseInt(req.params.id);
+  if (isNaN(userId))
+    return res.status(400).json({ message: "Invalid user id" });
+  const user = await findUserById(userId);
+  if (!user) return res.status(404).json({ message: "User not found" });
+  if (user[0].is_active) {
+    return res.status(409).json({ message: "Account already unfrozen" });
+  }
+  const updatedUser = await unfreezeAccount(userId);
+  return res.status(200).json({ message: "Account re-activated successfully" });
+});
+
+// - [x] Managing account closure and data retention policies in compliance with relevant regulations
+exports.closeAccount = wrap(async (req, res) => {
+  const { id } = req.user;
+  const user = await findUserById(id);
+  if (!user) return res.status(404).json({ message: "User not found" });
+  if (user[0].is_active) {
+    return res.status(409).json({ message: "Account already active" });
+  }
+  const updatedUser = await closeAccount(id);
+  return res.status(200).json(updatedUser);
 });
